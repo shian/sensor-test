@@ -1,6 +1,7 @@
 package net.shian5.app.sensortest;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,6 +30,15 @@ public class MainActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(getApplicationContext(), "You choose" + list[position], Toast.LENGTH_SHORT).show();
+                switch (position) {
+                    case 0:
+                        Intent myIntent = new Intent(getBaseContext(), ProximityActivity.class);
+                        startActivity(myIntent);
+                        break;
+                    default:
+                        break;
+                }
+
             }
         });
     }
